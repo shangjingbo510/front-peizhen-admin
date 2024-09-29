@@ -1,0 +1,23 @@
+/**
+  * 表单表格中间隔断
+  */
+.inline-bg {
+    background-color: #f7f9fb;
+    height: 24px;
+    width: 102%;
+    margin: 0 -24px 24px -24px;
+}
+
+/**
+  * 上传按钮
+  */
+.file-suffix {
+    position: absolute;
+    top: 5px;
+    height: 28px;
+    width: 54px;
+    outline: none;
+    border: 0;
+    left: 0;
+    opacity: 0;
+}

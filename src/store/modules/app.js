@@ -1,47 +1,46 @@
-import Cookies from 'js-cookie'
-
 const state = {
-  sidebar: {
-    opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,
-    withoutAnimation: false
+  enumList: {
+    MaritalStatusEnum: [], //婚姻状态
+    QualificationEnum: [], //学历
+    RelationEnum: [], //关系
+    PartnerLevelEnum: [], //合伙人类别
+    AuditStatusEnum: [], //审核状态
   },
-  device: 'desktop'
+  customerList: [], //查看客户下拉列表
+  expertList: [], //查看专家下拉列表
+  masterList: [], //查看项目经理下拉列表
+  partnerList: [], //查看合伙人下拉列表
+  businessList: [], //查看业务类型下拉列表
 }
 
 const mutations = {
-  TOGGLE_SIDEBAR: state => {
-    state.sidebar.opened = !state.sidebar.opened
-    state.sidebar.withoutAnimation = false
-    if (state.sidebar.opened) {
-      Cookies.set('sidebarStatus', 1)
-    } else {
-      Cookies.set('sidebarStatus', 0)
-    }
+  SET_ENUMLIST: (state, enumList) => {
+    state.enumList = enumList;
   },
-  CLOSE_SIDEBAR: (state, withoutAnimation) => {
-    Cookies.set('sidebarStatus', 0)
-    state.sidebar.opened = false
-    state.sidebar.withoutAnimation = withoutAnimation
+  SET_CUSTOMER_LIST: (state, list) => {
+    state.customerList = list;
   },
-  TOGGLE_DEVICE: (state, device) => {
-    state.device = device
+  SET_EXPERT_LIST: (state, list) => {
+    state.expertList = list;
+  },
+  SET_MASTER_LIST: (state, list) => {
+    state.masterList = list;
+  },
+  SET_PARTNER_LIST: (state, list) => {
+    state.partnerList = list;
+  },
+  SET_BUSINESS_LIST: (state, list) => {
+    state.businessList = list;
   }
 }
 
 const actions = {
-  toggleSideBar({ commit }) {
-    commit('TOGGLE_SIDEBAR')
-  },
-  closeSideBar({ commit }, { withoutAnimation }) {
-    commit('CLOSE_SIDEBAR', withoutAnimation)
-  },
-  toggleDevice({ commit }, device) {
-    commit('TOGGLE_DEVICE', device)
+  enumListAction({ commit }, enumList) {
+    commit('SET_ENUMLIST', enumList)
   }
 }
 
 export default {
-  namespaced: true,
   state,
   mutations,
   actions

@@ -1,8 +1,8 @@
 @import './variables.scss';
 @import './mixin.scss';
 @import './transition.scss';
-@import './element-ui.scss';
-@import './sidebar.scss';
+@import "table";
+@import "form";
 
 body {
   height: 100%;
@@ -11,6 +11,24 @@ body {
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
+
+//@font-face {
+//  font-family: 'iconfont';  /* project id 2311443 */
+//  src: url('//at.alicdn.com/t/font_2311443_movicnevak.eot');
+//  src: url('//at.alicdn.com/t/font_2311443_movicnevak.eot?#iefix') format('embedded-opentype'),
+//  url('//at.alicdn.com/t/font_2311443_movicnevak.woff2') format('woff2'),
+//  url('//at.alicdn.com/t/font_2311443_movicnevak.woff') format('woff'),
+//  url('//at.alicdn.com/t/font_2311443_movicnevak.ttf') format('truetype'),
+//  url('//at.alicdn.com/t/font_2311443_movicnevak.svg#iconfont') format('svg');
+//}
+//
+//.iconfont {
+//  font-family: "iconfont" !important;
+//  font-size: 16px;
+//  font-style: normal;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//}
 
 label {
   font-weight: 700;
@@ -58,8 +76,175 @@ div:focus {
     height: 0;
   }
 }
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pull-left{
+  float: left;
+}
+.pull-right{
+  display: flex;
+  justify-content: flex-end;
+}
+.flex{
+  display: flex;
+}
+.flex-center{
+  justify-content: space-between;
+  align-items: center;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
+.ml-30{
+  margin-left: 30px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-30{
+  margin-right: 30px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.pl-15{
+  padding-left: 15px;
+}
+.padding-15{
+  padding: 15px;
+}
+.padding-20{
+  padding: 20px;
+}
+.margin-space-15{
+  margin: 0 15px;
+}
+.inline{
+  display: inline-block;
+}
+.w-50{
+  width: 50px!important;
+}
+.w-100{
+  width: 100px!important;
+}
+.w-150{
+  width: 150px!important;
+}
+.w-200{
+  width: 200px!important;
+}
+.w-250{
+  width: 250px!important;
+}
+.w-320{
+  width: 320px!important;
+}
+.w-360{
+    width: 360px!important;
+}
+.w-400{
+  width: 400px!important;
+}
+.white-bg{
+  background:#fff;
+}
+.gray{
+  color: #999999;
+}
+.red{
+  color: #F73231;
+}
+.blue{
+  color: #2893FD;
+  cursor: pointer;
+}
 
 // main-container global css
 .app-container {
   padding: 20px;
 }
+
+.filter-container{
+  padding: 20px;
+}
+
+.table-box {
+  margin: 16px 0;
+  padding: 16px;
+  .el-table{
+    margin-top: 16px;
+  }
+  .el-form-item{
+    margin-bottom: 0;
+  }
+  .el-pagination{
+    text-align: right;
+  }
+}
+.dialog-footer{
+    text-align: right;
+    padding-right: 20px;
+}
+
+/*更改element-ui全局样式*/
+.el-button--text, .el-button--text:focus, .el-button--text:hover{
+    color: #2E50FF;
+}
+.el-menu-item.is-active, .el-tabs__item.is-active, .el-tabs__item:hover{
+    color: #2E50FF;
+}
+.el-tabs__active-bar{
+    background-color: #2E50FF;
+}
+.el-button--primary,.el-button--primary:focus, .el-button--primary:hover {
+    background: #2E50FF;
+    border: none;
+}
+
+/*---------------暂无数据样式---------------*/
+.empty-box{
+  .nodata-img{
+    width: 300px;
+    height: 220px;
+    margin-top: 60px;
+  }
+  .font1{
+    font-size: 14px;
+    color: #999;
+  }
+}
+
+/*dialog footer 底部*/
+.dialog-footer {
+  padding: 0 24px 0 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid #EBEDF2;
+}
+
+/*el-tabs样式*/
+.el-tabs__nav-wrap::after {
+    height: 1px;
+}
+
+
