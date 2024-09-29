@@ -231,8 +231,8 @@ export default {
         this.form = Object.assign({}, this.form, res.data);
         console.log(this.form);
       }else{
-        
-      } 
+
+      }
     },
     //获取视频分类
     async getCategoryList(){
@@ -262,7 +262,7 @@ export default {
     },
     //缩略图上传
     async changeonShare(file) {
-      let res = await ossUploadFile({ 
+      let res = await ossUploadFile({
         file: file.raw,
         businessType: 'banner'
       });
@@ -333,8 +333,8 @@ export default {
 
       const client = new OSS({
         region: 'oss-cn-beijing', // 请设置成你的
-        accessKeyId: 'LTAIw2q04XeLpEcY', // 请设置成你的
-        accessKeySecret: 'CPjaHtZHA201Z67ik72fPz0e2inHI5', // 请设置成你的
+        accessKeyId: '', // 请设置成你的
+        accessKeySecret: '', // 请设置成你的
         bucket: this.getBucketName(), // 请设置成你的
         secure: true, // 上传链接返回支持https
       });
